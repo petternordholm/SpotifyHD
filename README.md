@@ -1,4 +1,0 @@
-SpotifyHD
-=========
-
-SpotifyHD
