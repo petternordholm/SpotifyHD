@@ -3,3 +3,41 @@ h1 {
 	font-size: 24px;
 	padding: 20px;
 }
+
+.main{
+	display:block;
+	width: 100%;
+}
+
+.left {
+	width: 400px;
+	border: 1px solid;
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.albumimg {
+	width:200px;
+}
+
+.songlist {
+	max-height: 400px;
+	list-style: none;
+}
+
+.songlist ul {
+	list-style:none;
+}
+
+.songlist ul {
+	list-style:none;
+}
+
+body  {
+	background:url('http://www.htbackdrops.com/v2/albums/userpics/10904/13b52s.jpg');
+	background-size: 100%, auto;
+	background-repeat:no-repeat;
+}
