@@ -1,0 +1,15 @@
+{
+	"BundleType": "Application",
+	"AppIcon": {
+		"36x18": "hd-540x300.png"
+	},
+	"AppName": {
+		"en": "SpotifyHD"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+	"RequiredPermissions": [
+		"http://ws.audioscrobbler.com"
+	]
+}
