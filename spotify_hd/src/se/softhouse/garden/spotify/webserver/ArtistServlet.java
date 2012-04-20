@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import se.softhouse.garden.spotify.scraper.ArtistScraper;
 import se.softhouse.garden.spotify.scraper.ArtistScraper.Result;
+import se.softhouse.garden.spotify.scraper.HtBackDropArtistScraper;
 
 import com.google.common.base.Strings;
 import com.google.common.io.ByteStreams;
@@ -24,7 +25,7 @@ public class ArtistServlet extends HttpServlet
 	
 	String BACKDROP = "backdrop.jpg";
 	
-	ArtistScraper myArtistScraper;
+	ArtistScraper myArtistScraper = new HtBackDropArtistScraper();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -57,7 +58,7 @@ public class ArtistServlet extends HttpServlet
 			resp.setHeader(HttpHeaders.CONTENT_LENGTH, contentLength);
 		}
 		
-		if (Strings.isNullOrEmpty(HttpHeaders.CONTENT_TYPE))
+		if (Strings.isNullOrEmpty(contentType))
 		{
 			resp.sendError(HttpServletResponse.SC_NOT_FOUND);
 		}

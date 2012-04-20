@@ -1,6 +1,7 @@
 package se.softhouse.garden.spotify.scraper;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 public interface ArtistScraper 
@@ -27,7 +28,12 @@ public interface ArtistScraper
 			myResponseCode = responseCode;
 		}
 		
-		private Map<String, String> myResponseHeaders;
+		public void setInputStream(InputStream inputStream) 
+		{
+			myInputStream = inputStream;
+		}
+
+		private Map<String, String> myResponseHeaders = new HashMap<String, String>();
 		private InputStream         myInputStream;
 		private int myResponseCode;
 	}
