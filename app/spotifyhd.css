@@ -7,33 +7,61 @@ h1 {
 .main{
 	display:block;
 	width: 100%;
+	min-height: 700px;
 }
 
 .left {
-	width: 400px;
-	border: 1px solid;
+	width: auto;
 	float: left;
 }
 
 .right {
 	float: right;
+	white-space:nowrap;
 }
 
 .albumimg {
 	width:200px;
 }
 
-.songlist {
-	max-height: 400px;
-	list-style: none;
+.song {
+	max-height: 600px;
+	background: rgb(255, 255, 255);
+	opacity:0.7;
+	margin-right: 20px;
+	border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	border: 0px solid #800000;
+	font-size: 2.5em;
+	font-family:"verdana", Times, serif;
+	margin: 0;
+	text-overflow: ellipsis;
+	padding:0;
 }
 
-.songlist ul {
-	list-style:none;
+.song  span {
+	padding:10px;
 }
 
-.songlist ul {
-	list-style:none;
+.nextsong {
+	max-height: 600px;
+	background: rgb(255, 255, 255);
+	opacity:0.7;
+	margin-right: 20px;
+	border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	border: 0px solid #800000;
+	font-size: 1em;
+	font-family:"verdana", Times, serif;
+	margin: 0;
+	text-overflow: ellipsis;
+	padding:0;
+}	
+
+.nextsong  span {
+	padding:10px;
 }
 
 body  {

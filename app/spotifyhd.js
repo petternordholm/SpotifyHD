@@ -7,11 +7,15 @@ exports.init = init;
 function init() {
 
 	//updatePageWithTrackDetails();
-
+	test();
+	updateAlbumArt();
+	jQuery(".songlist").html("");
 	player.observe(models.EVENT.CHANGE, function (e) {
 
 		// Only update the page if the track changed
 		if (e.data.curtrack == true) {
+			test();
+			updateAlbumArt();
 			//updatePageWithTrackDetails();
 		}
 	});
@@ -32,6 +36,20 @@ function updatePageWithTrackDetails() {
 		var track = playerTrackInfo.data;
 		header.innerHTML = track.name + " on the album " + track.album.name + " by " + track.album.artist.name + ".";
 	}
+}
+
+function test() {
+	var header = document.getElementById("header");
+	header.innerText = header.innerText +  " balle!"
+//	+ player.context.album.name;
+}
+
+function updateAlbumArt()
+{
+jQuery(".songlist").html("");
+//	jQuery(".albumimg").attr("src", "");
+//	var albumArt = document.getElementByClassName('albumimg');
+//	albumArt.src = "";
 }
 
 function searchLastFMForEvents(city) {

@@ -5,19 +5,24 @@
 		<title>SpotifyHD</title>
 		<link rel="stylesheet" href="sp://import/css/adam.css">
 		<link rel="stylesheet" href="spotifyhd.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	</head>
 	
 	<body onload="sp = getSpotifyApi(1); spotify = sp.require('spotifyhd'); spotify.init();">
 		<section class="main">
 			
 			<section class="left">
-				<div class="songlist">
-					<ul>
-						<li>Dj Arne - Nisses-sång</li>
-						<li class="selected">Dr Bombay - Vindaloo</li>
-						<li>Jumper - Parketklister</li>
-						<li>Ebba blå - Minus 800 grader</li>
-					</ul>
+				Now Playing...
+				<div class="song">
+					<span>
+						Dr Bombay - Vindaloo
+					</span>
+				</div>
+				Next song...
+				<div class="nextsong">
+					<span>
+						Ebba gul - minus 800 grader
+					</span>
 				</div>
 			</section>
 			
