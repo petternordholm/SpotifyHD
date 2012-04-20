@@ -1,0 +1,5 @@
+artist/<artistname>/image.jpg -> full backdrop image
+album/<artistname>/<album>/thumbnail.jpg -> thumbnail for album art
+
+
+artist/<artistname>/thumbnail.jpg -> thumbnail image
