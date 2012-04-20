@@ -24,6 +24,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.google.common.net.HttpHeaders;
+
 
 public class HtBackDropArtistScraper implements ArtistScraper 
 {
@@ -46,6 +48,7 @@ public class HtBackDropArtistScraper implements ArtistScraper
 				if (header.getValue() == null)continue;
 				res.getResponseHeaders().put(header.getKey(),header.getValue().get(0));
 			}
+			res.getResponseHeaders().put(HttpHeaders.CONTENT_TYPE,"image/jpg");
 			res.setResponseCode(HttpServletResponse.SC_OK);			
 			res.setInputStream(connection.getInputStream());
 		} 
@@ -82,12 +85,21 @@ public class HtBackDropArtistScraper implements ArtistScraper
 			
 			String preferedImgNo = null;
 			
+			boolean hdImageFound = false;
+			
 			for (int index = 0; index < nodeList.getLength(); index++)
 			{
 				Node n = nodeList.item(index);
 				String dim = n.getTextContent();
 				
-				if ( preferedImgNo == null )
+				if (dim.equalsIgnoreCase("1280x720") && !hdImageFound)
+				{
+					Node pictureId = getNodeWithName(n.getParentNode(),"id");
+					if (pictureId == null)continue;
+					preferedImgNo = pictureId.getTextContent();		
+					hdImageFound = true;
+				}				
+				else if ( preferedImgNo == null )
 				{
 					Node pictureId = getNodeWithName(n.getParentNode(),"id");
 					if (pictureId == null)continue;
@@ -101,12 +113,6 @@ public class HtBackDropArtistScraper implements ArtistScraper
 					preferedImgNo = pictureId.getTextContent();
 					break;
 				}
-				else if (dim.equalsIgnoreCase("1280x720"))
-				{
-					Node pictureId = getNodeWithName(n.getParentNode(),"id");
-					if (pictureId == null)continue;
-					preferedImgNo = pictureId.getTextContent();					
-				}				
 			}
 			return preferedImgNo;
 			
